@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY_WIDGETS</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<style>
+    #autocomplete{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #date-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+   
+
+</style>
+<script>
+    $(document).ready(function() {
+        // here is accordion
+$("#accordion").accordion();
+
+// here is the autocomplete
+let fulltext = [
+    "Python",
+    "JavaScript",
+    "Java",
+    "HTML",
+    "CSS",
+    "C",
+    "C++",
+    "C#",
+    "GO",
+    "Ruby",
+    "Pearl",
+    "Swift"
+   
+]
+$("#tags").autocomplete({
+    source : fulltext
+})
+// here is date picker
+$("#date").datepicker({
+                  showWeek: true,
+                  yearSuffix: "(DOB)",
+                  showAnim: "slide"
+});
+
+// here is the pop over
+$("#pop").dialog({
+                  autoOpen: true,
+               });
+              $("#btn").click(function () {
+                  $("#pop").dialog("open");
+              });
+
+
+            //   here is the rating
+            $("#rate").rating('create',
+                   {
+                        coloron: 'green',
+                        onClick: function () {
+                           alert('Thanks For Rating Us' + this.attr('data-rating'));
+						   
+                        }
+                    });
+    });
+</script>
+</head>
+<body>
+    <!-- here is accordion -->
+    <div id="accordion">
+        <h4>Click Me-1</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quisquam atque maxime incidunt in impedit aut, magni alias mollitia qui cumque reiciendis, rem, ut provident quae nemo asperiores minus eos.
+        Consequatur debitis exercitationem culpa sunt repudiandae laborum dolor cum adipisci hic et minus voluptatibus, voluptates sit doloremque mollitia eaque, rerum obcaecati aliquam enim dolore facere recusandae dolorum perferendis? Iure, odit.
+        Natus quae magni aliquam doloremque perferendis adipisci? Dicta, saepe nostrum. Esse, saepe sit sequi explicabo deleniti inventore. Sint perspiciatis soluta quisquam laudantium accusantium nesciunt qui, praesentium voluptates sapiente provident expedita.
+        Optio totam quos quam temporibus quod reiciendis illum repellat saepe voluptatem adipisci eos dolorum, eveniet eum sit libero harum facere explicabo delectus. Adipisci distinctio illo a. Recusandae nesciunt mollitia reiciendis?</p>
+    
+        <h4>Click Me-2</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos dolorum facere veniam nobis asperiores ratione fuga dicta quae consequuntur exercitationem, laborum necessitatibus velit harum, voluptas unde natus sint ut laudantium!
+        Adipisci et corrupti quo, cupiditate libero hic magni? Id porro optio, commodi quo sunt nesciunt sit, est placeat pariatur, iste ab natus adipisci velit ex impedit accusantium sequi eum saepe.</p>
+    
+        <h4>click Me-3</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam eos quibusdam explicabo, placeat earum animi cumque, sequi minus accusantium harum magni hic minima ut facere velit possimus error tenetur.
+        Ad unde, aperiam ex nulla saepe deleniti veniam rerum quo, quaerat quos vel harum assumenda. Debitis, obcaecati? Laudantium excepturi quae reiciendis corporis pariatur vero nulla, temporibus deserunt similique? Tempora, odit?
+        Quo, atque unde. Laborum nisi corrupti quisquam debitis odio error ipsum commodi laboriosam cum quae enim veritatis nam nesciunt, hic accusantium quidem voluptatem odit non? Necessitatibus harum ullam qui commodi!
+        Quisquam sunt sed eaque velit harum voluptatum maxime quasi nihil in eligendi quibusdam iure rem assumenda tempora alias quae vel est facilis ut aspernatur quidem fugit, officiis similique. Nam, optio!
+        Ut ex deserunt necessitatibus nobis molestiae, debitis quas. Harum cumque atque quis dolores quae architecto accusantium explicabo commodi dignissimos nesciunt omnis officia, illo maxime, vero deleniti! Ullam iusto fugiat quia.
+        Ipsum dignissimos quis, eos, facere itaque pariatur ut consequatur dolorum delectus obcaecati incidunt distinctio blanditiis minima, ratione excepturi maxime hic quaerat id quibusdam nulla explicabo? Dignissimos eos labore ab temporibus.</p>
+    </div><br>
+    <!-- here is the autocomplete -->
+<div id="autocomplete">
+    Search any Programing Language&nbsp;
+    <input type="text" id="tags">
+</div><br>
+<!-- here is date picker -->
+<div id="date-div">
+    Select a Date <input type="text" id="date">
+</div><br>
+<!-- here is the pop over -->
+<div id = "pop" title="Bio Data">
+Enter Your Name
+    <input type="text" />
+</div>
+<button id = "btn">Click Me..</button><br>
+<!-- here is the   rating -->
+<div>
+    <table>
+        <tr>
+            <td>Default stars</td>
+            <td>
+                <div id="rate">
+                    <input type="hidden" value="1" name="rating"/>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
